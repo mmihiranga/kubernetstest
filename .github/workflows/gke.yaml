@@ -99,7 +99,7 @@ jobs:
     - name: Set up Kustomize
       run: |-
         cd k8s
-        envsubst < kubectl cluster-info
+        kubectl cluster-info
         envsubst < service.yaml | kubectl apply -f -
         envsubst < deployment.yaml | kubectl apply -f -
         kubectl get services -o wide
