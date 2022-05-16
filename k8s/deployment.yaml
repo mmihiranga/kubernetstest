@@ -17,11 +17,6 @@ spec:
           image: 19990106/testkube:latest
           ports:
             - containerPort: 3000
-              resources:
-                requests:
-                  cpu: 100m
-                limits:
-                  cpu: 100m
       tolerations:
         - key: "key"
           operator: "Exists"
