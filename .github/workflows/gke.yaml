@@ -73,7 +73,7 @@ jobs:
         CLUSTER_NAME: testkubecluster
         ZONE_NAME: us-central1-c
       with:
-        args:  apply -f k8s/ | get svc
+        args:  apply -f k8s/ | kubectl get svc
     
 
     # - name: Build
