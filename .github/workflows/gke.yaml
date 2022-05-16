@@ -77,23 +77,28 @@ jobs:
     #   run: |-
     #     docker push "gcr.io/airy-dialect-342617/testkube:${{ github.sha }}"
 
-    # Set up kustomize
+    # # Set up kustomize
+    # - name: Set up Kustomize
+    #   run: |-
+    #     cd k8s
+        
+    #     curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+    #     chmod u+x ./kustomize
+
+    # # Deploy the Docker image to the GKE cluster
+    # - name: Deploy
+    #   run: |-
+    #     cd k8s
+    #     ./kustomize edit set image gcr.io/airy-dialect-342617/testkube:TAG=gcr.io/airy-dialect-342617/testkube:${{ github.sha }}
+    #     ./kustomize build . | kubectl apply -f -
+    #     kubectl rollout status deployment/nestjs-k8s
+    #     kubectl get services -o wide
+
+
+  # Set up kustomize
     - name: Set up Kustomize
       run: |-
         cd k8s
-        
-        curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-        chmod u+x ./kustomize
-
-    # Deploy the Docker image to the GKE cluster
-    - name: Deploy
-      run: |-
-        cd k8s
-        ./kustomize edit set image gcr.io/airy-dialect-342617/testkube:TAG=gcr.io/airy-dialect-342617/testkube:${{ github.sha }}
-        ./kustomize build . | kubectl apply -f -
-        kubectl rollout status deployment/nestjs-k8s
+        envsubst < service.yaml | kubectl apply -f -
+        envsubst < deployment.yaml | kubectl apply -f -
         kubectl get services -o wide
-
-  # envsubst < service.yaml | kubectl apply -f -
-        # envsubst < deployment.yaml | kubectl apply -f -
-        # kubectl get services -o wide
