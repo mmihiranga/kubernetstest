@@ -49,7 +49,7 @@ jobs:
     - name: Build
       run: |-
         docker build \
-          --tag "gcr.io/195670233722/19990106/testkube:${{ github.sha }}" \
+          --tag "gcr.io/195670233722/testkube:${{ github.sha }}" \
           --build-arg GITHUB_SHA="${{ github.sha }}" \
           --build-arg GITHUB_REF="${{ github.sha }}" \
           .
@@ -57,7 +57,7 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push "gcr.io/195670233722/19990106/testkube:${{ github.sha }}"
+        docker push "gcr.io/195670233722/testkube:${{ github.sha }}"
 
     # Set up kustomize
     - name: Set up Kustomize
