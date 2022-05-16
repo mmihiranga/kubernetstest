@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nestjs-k8s
-          image: 19990106/testkube:latest
+          image: LOCATION-docker.pkg.dev/airy-dialect-342617/testkube:TAG
           ports:
             - containerPort: 3000
       tolerations:
