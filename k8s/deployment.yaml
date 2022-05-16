@@ -16,4 +16,4 @@ spec:
         - name: nestjs-k8s
           image: 19990106/testkube
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
