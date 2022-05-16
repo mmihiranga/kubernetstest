@@ -17,3 +17,7 @@ spec:
           image: 19990106/testkube:latest
           ports:
             - containerPort: 3000
+      tolerations:
+        - key: "key"
+          operator: "Exists"
+          effect: "NoSchedule"
