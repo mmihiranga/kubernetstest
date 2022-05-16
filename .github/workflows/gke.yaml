@@ -62,8 +62,9 @@ jobs:
     # Set up kustomize
     - name: Set up Kustomize
       run: |-
-        envsubst < cd k8s service.yaml | kubectl apply -f -
-        envsubst < cd k8s deployment.yaml | kubectl apply -f -
+        ls
+        envsubst < service.yaml | kubectl apply -f -
+        envsubst < deployment.yaml | kubectl apply -f -
     #     curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
     #     chmod u+x ./kustomize
 
