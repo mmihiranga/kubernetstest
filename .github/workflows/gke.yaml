@@ -73,7 +73,7 @@ jobs:
         CLUSTER_NAME: testkubecluster
         ZONE_NAME: us-central1-c
       with:
-        args: ls
+        args: logs
 
     # - name: Build
     #   run: |-
