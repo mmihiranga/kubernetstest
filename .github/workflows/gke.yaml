@@ -91,7 +91,7 @@ jobs:
         cd k8s
         ./kustomize edit set image gcr.io/airy-dialect-342617/testkube:TAG=gcr.io/airy-dialect-342617/testkube:${{ github.sha }}
         ./kustomize build . | kubectl apply -f -
-        kubectl rollout status deployment/$DEPLOYMENT_NAME
+        kubectl rollout status deployment/nestjs-k8s
         kubectl get services -o wide
 
   # envsubst < service.yaml | kubectl apply -f -
