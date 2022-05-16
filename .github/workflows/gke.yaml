@@ -11,7 +11,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  PROJECT_ID: airy-dialect-342617
   GKE_CLUSTER: autopilot-cluster-1    # TODO: update to cluster name
   GKE_ZONE: us-central1-b	   # TODO: update to cluster zone
   DEPLOYMENT_NAME: nestjs-k8s # TODO: update deployment name if changed in deployment.yaml
