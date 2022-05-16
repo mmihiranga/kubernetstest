@@ -62,7 +62,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/testkube:${{ github.sha }}
+        tags: ${{ secrets.DOCKER_USERNAME }}/testkube
     #sdf
     - uses: actions/checkout@master
     - name: kubectl - Google Cloud GKE cluster.
