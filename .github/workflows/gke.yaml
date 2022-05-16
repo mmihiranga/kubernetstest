@@ -81,8 +81,7 @@ jobs:
     - name: Set up Kubernates
       run: |-
         cd k8s
-        envsubst < service.yaml | kubectl apply -f -
-        envsubst < deployment.yaml | kubectl apply -f -
+        envsubst < kubectl create -f -
         kubectl get svc
         kubectl get services -o wide
     #     curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
