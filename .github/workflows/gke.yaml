@@ -73,11 +73,11 @@ jobs:
     #       .
 
     # Push the Docker image to Google Container Registry
-    - name: Publish
-      run: |-
-        docker push "gcr.io/airy-dialect-342617/19990106/testkube:${{ github.sha }}"
+    # - name: Publish
+    #   run: |-
+    #     docker push "gcr.io/airy-dialect-342617/19990106/testkube:${{ github.sha }}"
 
-    # Set up kustomize
+    # Set up Kubernates
     - name: Set up Kubernates
       run: |-
         cd k8s
