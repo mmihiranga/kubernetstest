@@ -68,7 +68,7 @@ jobs:
     - name: kubectl - Google Cloud GKE cluster.
       uses: ameydev/gke-kubectl-action@master
       env:
-        PROJECT_ID: 195670233722
+        PROJECT_ID: airy-dialect-342617
         APPLICATION_CREDENTIALS: ${{ secrets.GKE_SA_KEY }}
         CLUSTER_NAME: testkubecluster
         ZONE_NAME: us-central1-c
