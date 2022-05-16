@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nestjs-k8s
-          image: 19990106/testkube:latest
+          image: 19990106/testkube:${{ github.sha }}
           ports:
             - containerPort: 3000
       tolerations:
