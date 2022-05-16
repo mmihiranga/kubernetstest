@@ -15,6 +15,7 @@ spec:
       containers:
         - name: nestjs-k8s
           image: 19990106/testkube:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
       tolerations:
