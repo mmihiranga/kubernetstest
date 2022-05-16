@@ -73,7 +73,7 @@ jobs:
         CLUSTER_NAME: testkubecluster
         ZONE_NAME: us-central1-c
       with:
-        args: kubectl get pods
+        args: get pods
     - name: Deploy to K8s
       run: kubectl apply -f k8s/
 
