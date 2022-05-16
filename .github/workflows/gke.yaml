@@ -100,6 +100,8 @@ jobs:
       run: |-
         cd k8s
         kubectl cluster-info
-        envsubst < service.yaml | kubectl apply -f -
-        envsubst < deployment.yaml | kubectl apply -f -
-        kubectl get services -o wide
+
+        
+      # envsubst < service.yaml | kubectl apply -f -
+        # envsubst < deployment.yaml | kubectl apply -f -
+        # kubectl get services -o wide
